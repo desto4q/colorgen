@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { View, Text } from "react-native";
+import React from "react";
+import Main from "./app/Main";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { ModalProvider, createModalStack } from "react-native-modalfy";
+import ColorModal from "./app/components/ColorModal";
+const modalCOnfig = { ColorModal };
+const stack = createModalStack(modalCOnfig);
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+	return (
+		<GestureHandlerRootView>
+			<ModalProvider stack={stack}>
+				<Main />
+			</ModalProvider>
+		</GestureHandlerRootView>
+	);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
