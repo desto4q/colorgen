@@ -32,6 +32,30 @@ let getAllComps = async () => {
 		return [];
 	}
 };
+let getAllShades = async () => {
+	try {
+		let tempArray = [];
+		let keys = tints.getAllKeys();
+
+		for (let i of keys) {
+			let ObjArray = tints.getString(i);
+
+			let parsed = JSON.parse(ObjArray);
+			let obj = {
+				name: i,
+				colors: parsed,
+			};
+			tempArray.push(obj);
+			// let tempObject = {
+			// 	label: i,
+			// 	colors: JSON.parse(tempArray),
+			// };
+		}
+		return tempArray;
+	} catch (err) {
+		return [];
+	}
+};
 
 let saveTints = async (item: any[], name: string) => {
 	let tempJson = JSON.stringify(item);
@@ -42,4 +66,4 @@ let save = async (item: any[], name: string) => {
 	comps.set(name, tempJson);
 };
 
-export { save, comps, saveTints, tints, getAllComps };
+export { save, comps, saveTints, tints, getAllComps, getAllShades };

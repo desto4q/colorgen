@@ -6,6 +6,7 @@ import Saved from "../screens/Saved";
 let Tabs = createBottomTabNavigator();
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Mono from "../screens/Mono";
+import SavedMono from "../screens/SavedMono";
 
 export default function TabNavigation() {
 	return (
@@ -40,6 +41,15 @@ export default function TabNavigation() {
 				options={{
 					tabBarIcon: () => {
 						return <Ionicons name="heart" size={22} />;
+					},
+				}}
+			/>
+			<Tabs.Screen
+				name="SavedMono"
+				component={SavedMono}
+				options={{
+					tabBarIcon: () => {
+						return <Ionicons name="heart-outline" size={22} />;
 					},
 				}}
 			/>

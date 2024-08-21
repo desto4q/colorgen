@@ -27,9 +27,9 @@ export default function Mono() {
 	}, []);
 	useEffect(() => {}, [colors]);
 	return (
-		<View style={tw("bg-red-200")}>
+		<View style={tw("")}>
 			<View style={tw("p-2 py-4 border-b bg-white border-neutral-200")}>
-				<Text style={tw("text-xl ")}>ColorGen</Text>
+				<Text style={tw("text-xl ")}>ColorGen: Shades</Text>
 			</View>
 			<ScrollView contentContainerStyle={tw("gap-2 px-2 pb-24 ")}>
 				{/* {colors.map((e, key) => {

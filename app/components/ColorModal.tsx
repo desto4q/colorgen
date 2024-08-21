@@ -14,11 +14,10 @@ export default function ColorModal({ modal: { closeModal, params } }: any) {
 					Change Color
 				</Text>
 			</View>
-
 			<View style={tw(" p-2   h-96")}>
 				<ColorPicker
-				// gapSize={10}
-				// wheelHidden
+					// gapSize={10}
+					// wheelHidden
 					color={params.color}
 					onColorChange={(color: string) => {}}
 					onColorChangeComplete={onSelectColor}
