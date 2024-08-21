@@ -11,6 +11,7 @@ export default function Home() {
 	let generatedColors = useMemo(() => {
 		return generateColor(generateRandomColors(10));
 	}, []);
+
 	useEffect(() => {
 		setColors(generatedColors);
 	}, []);

@@ -21,12 +21,16 @@ export default function ColorView({ color, label, updater }: IColorView) {
 	const { openModal } = useModal();
 	const sendMessage = () =>
 		openModal("ColorModal", { color: color, updater: updateColor });
+	// const setSheet = () => {
+	// 	openSheet(color, updateColor);
+	// };
 	return (
 		<View>
 			<TouchableOpacity
 				style={tw("p-1")}
 				onPress={() => {
 					sendMessage();
+					// setSheet();
 				}}
 			>
 				<View

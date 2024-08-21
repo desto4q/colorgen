@@ -4,6 +4,14 @@ interface IColors {
 	color: string;
 	label: string;
 }
+interface IMono {
+	shades: string[];
+	tints: string[];
+}
+
+let snapper=() => {
+	
+}
 export { tw };
 
-export type { IColors };
+export type { IColors, IMono };

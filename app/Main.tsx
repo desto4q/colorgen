@@ -6,7 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 export default function Main() {
 	return (
-		<SafeAreaView style={{flex:1}}>
+		<SafeAreaView style={{ flex: 1 }}>
 			<NavigationContainer>
 				<TabNavigation />
 			</NavigationContainer>

@@ -1,9 +1,10 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 // import React from "react";
 import { IColors, tw } from "../actions/utils";
 import ColorView from "./ColorView";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { comps, save } from "../actions/Storage";
 
 export default function PaletteView({
 	PaletteItems,
@@ -36,10 +37,23 @@ export default function PaletteView({
 	// 	}
 	// 	console.log(`color-${id}`, BufferPalette);
 	// }, [BufferPalette]);
+	let saveName = `color-${id}`;
 	return (
 		<View style={tw(" gap-2")}>
-			<View style={tw("py-1")}>
+			<View style={tw("py-1 flex-row")}>
 				<Text style={tw("text-lg")}>Color-{id}</Text>
+				<TouchableOpacity
+					style={tw("ml-auto")}
+					onPress={async () => {
+						try {
+							await save(PaletteItems, saveName).then((resp) => {
+								console.log(comps.getString(saveName));
+							});
+						} catch (err) {}
+					}}
+				>
+					<Text style={tw("text-xl")}>save</Text>
+				</TouchableOpacity>
 			</View>
 			<View style={tw(" bg-white shadow-sm px-2 rounded-xl")}>
 				<ScrollView horizontal contentContainerStyle={tw("py-4   gap-2 ")}>
